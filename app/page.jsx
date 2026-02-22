@@ -24,24 +24,27 @@ const Car = () => {
   }
 
   useEffect(() => {
+
     if (!scrollgreayh.current || !car.current) return;
 
     setinnerwidth(window.innerWidth);
 
+    const Opacityel = wel.current.map((el) => {
+      return gsap.quickTo(el, "opacity");
+    });
+
+
     const caroverword = () => {
-      const Opacityel = wel.current.map((el) => {
-        localStorage.setItem(
-          "positoncar",
-          // car.current.getBoundingClientRect().left,
-            scrollgreayh.current.scrollTop
-        );
-        return gsap.quickTo(el, "opacity");
-      });
+      localStorage.setItem(
+        "positoncar",
+        // car.current.getBoundingClientRect().left,
+        scrollgreayh.current.scrollTop,
+      );
 
       Opacityel.forEach((i, ind) => {
         const el = wel.current[ind];
         if (
-          el.getBoundingClientRect().left >
+          el.getBoundingClientRect().left > // Cache ||
           car.current.getBoundingClientRect().left
         ) {
           i(0); //if car is ahead
@@ -79,7 +82,7 @@ const Car = () => {
     if (localposi !== null) {
       setlocalposi(Number(localposi));
       scrollgreayh.current.scrollTop = localposi;
-      console.log(localposi)
+      console.log(localposi);
     }
   }, []);
 
@@ -94,8 +97,7 @@ const Car = () => {
         innerwidth={innerwidth}
         car={car}
         scroll={scroll}
-        wel={wel.current}
-        localposi={localposi}
+        wel={wel}
       />
     </>
   );

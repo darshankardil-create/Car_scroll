@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 
-const Roaddiv = ({ scrollgreayh, innerwidth, car, scroll, wel, localposi }) => {
+const Roaddiv = ({ scrollgreayh, innerwidth, car, scroll, wel }) => {
   return (
     <>
       <div
@@ -26,7 +26,7 @@ const Roaddiv = ({ scrollgreayh, innerwidth, car, scroll, wel, localposi }) => {
                     <span
                       className="text-[#1E1E1E] "
                       ref={(o) => {
-                        wel[ind] = o; // i is ref callback which pass root of span
+                        wel.current[ind] = o; // i is ref callback which pass root of span
                       }}
                       key={ind}
                     >
