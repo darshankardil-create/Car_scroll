@@ -27,8 +27,6 @@ const Car = () => {
 
     setinnerwidth(window.innerWidth);
 
-    fun();
-
     const caroverword = () => {
       const Opacityel = wel.current.map((el) => {
         return gsap.quickTo(el, "opacity");
