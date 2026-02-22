@@ -45,7 +45,7 @@ const Roaddiv = ({scrollgreayh,innerwidth,car,scroll,wel}) => {
               {/* 160 is half width of car */}
               <Image
                 height={140}
-                src="/car.png"
+                src="/Car_scroll/Car/car.png"
                 width={420}
                 alt="McLaren-Car"
                 className=" min-h-35 min-w-105"
