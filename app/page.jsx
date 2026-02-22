@@ -50,9 +50,9 @@ const Car = () => {
 
     const handleWheel = (e) => {
       scrollgreayh.current.scrollTop += e.deltaY ; //manual scroll
-      // if(Math.min(scroll, innerwidth - 160)===innerwidth-160){
-      //   scrollgreayh.current.scrollTop += e.deltaY-2 ; 
-      // }
+      if(Math.min(scroll, innerwidth - 160)===innerwidth-160){
+        scrollgreayh.current.scrollTop += e.deltaY-2 ; 
+      }
     };
 
     scrollgreayh.current.addEventListener("scroll", caroverword);
