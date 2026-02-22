@@ -49,7 +49,7 @@ const Car = () => {
     const zoom = () => setinnerwidth(window.innerWidth);   // re updating innerwidth for cross check
 
     const handleWheel = (e) => {
-      scrollgreayh.current.scrollTop += e.deltaY - 2; //manual scroll
+      scrollgreayh.current.scrollTop += e.deltaY ; //manual scroll
     };
 
     scrollgreayh.current.addEventListener("scroll", caroverword);
