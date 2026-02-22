@@ -20,7 +20,7 @@ const Roaddiv = ({scrollgreayh,innerwidth,car,scroll,wel}) => {
             <div className="font-black text-[128px] fixed pt-3 pl-10 ">
               {"WELCOME4ITZFIZZ".split("").map((i, ind) => {
                 if (i === "4") {
-                  return <span className={"p-3 "} key={ind}></span>;
+                  return <span className={"p-3"} key={ind}></span>;
                 } else {
                   return (
                     <span
