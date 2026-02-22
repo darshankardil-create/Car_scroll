@@ -32,7 +32,8 @@ const Car = () => {
       const Opacityel = wel.current.map((el) => {
         localStorage.setItem(
           "positoncar",
-          car.current.getBoundingClientRect().left,
+          // car.current.getBoundingClientRect().left,
+            scrollgreayh.current.scrollTop
         );
         return gsap.quickTo(el, "opacity");
       });
@@ -78,6 +79,7 @@ const Car = () => {
     if (localposi !== null) {
       setlocalposi(Number(localposi));
       scrollgreayh.current.scrollTop = localposi;
+      console.log(localposi)
     }
   }, []);
 
