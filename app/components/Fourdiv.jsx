@@ -1,6 +1,6 @@
 import React from "react";
 
-const Fourdiv = ({opacity}) => {
+const Fourdiv = ({ opacity }) => {
   return (
     <>
       <div

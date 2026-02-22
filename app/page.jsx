@@ -8,6 +8,7 @@ import Roaddiv from "./components/Roaddiv";
 const Car = () => {
   const [scroll, setscroll] = useState(0);
   const [innerwidth, setinnerwidth] = useState(0);
+  const [localposi, setlocalposi] = useState(null);
 
   const scrollgreayh = useRef();
 
@@ -29,6 +30,10 @@ const Car = () => {
 
     const caroverword = () => {
       const Opacityel = wel.current.map((el) => {
+        localStorage.setItem(
+          "positoncar",
+          car.current.getBoundingClientRect().left,
+        );
         return gsap.quickTo(el, "opacity");
       });
 
@@ -46,12 +51,12 @@ const Car = () => {
     };
 
     const scrollcontrol = () => setscroll(scrollgreayh.current.scrollTop);
-    const zoom = () => setinnerwidth(window.innerWidth);   // re updating innerwidth for cross check
+    const zoom = () => setinnerwidth(window.innerWidth); // re updating innerwidth for cross check
 
     const handleWheel = (e) => {
-      scrollgreayh.current.scrollTop += e.deltaY ; //manual scroll
-      if(Math.min(scroll, innerwidth - 160)===innerwidth-160){
-        scrollgreayh.current.scrollTop += e.deltaY-2 ; 
+      scrollgreayh.current.scrollTop += e.deltaY; //manual scroll
+      if (Math.min(scroll, innerwidth - 160) === innerwidth - 160) {
+        scrollgreayh.current.scrollTop += e.deltaY - 2;
       }
     };
 
@@ -68,6 +73,14 @@ const Car = () => {
     };
   }, []);
 
+  useEffect(() => {
+    const localposi = localStorage.getItem("positoncar");
+    if (localposi !== null) {
+      setlocalposi(Number(localposi));
+      scrollgreayh.current.scrollTop = localposi;
+    }
+  }, []);
+
   return (
     <>
       <Fourdiv opacity={opacity} />
@@ -80,6 +93,7 @@ const Car = () => {
         car={car}
         scroll={scroll}
         wel={wel.current}
+        localposi={localposi}
       />
     </>
   );

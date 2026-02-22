@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 
-const Roaddiv = ({scrollgreayh,innerwidth,car,scroll,wel}) => {
+const Roaddiv = ({ scrollgreayh, innerwidth, car, scroll, wel, localposi }) => {
   return (
     <>
       <div
@@ -10,7 +10,7 @@ const Roaddiv = ({scrollgreayh,innerwidth,car,scroll,wel}) => {
         }
         ref={scrollgreayh}
       >
-        <div className="h-[265vh]" />
+        <div className="h-[2065vh]" />
         {/* 3 times more long viewport for scroll */}
         <div className="min-w-screen h-50 fixed  bg-[#1E1E1E] top-1/3 ">
           <div
