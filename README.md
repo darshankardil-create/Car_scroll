@@ -1,3 +1,6 @@
+
+Live-webpage:(https://darshankardil-create.github.io/Car_scroll/)
+
 ## Improvements from the Original Webpage
 
 - **Problem:** When zooming out the screen, the car path width increased but the car’s position was not recalculated correctly, preventing it from moving forward unless the page was manually refreshed.
@@ -13,3 +16,5 @@
   **Solution:** Implemented dynamic visibility logic by recalculating section positions based on the car’s updated movement and dividing the layout into four segments using `screenWidth / 4`, ensuring each section becomes fully visible only when the car reaches its corresponding point across all screen sizes and zoom levels.
 
 - Used **GSAP (GreenSock Animation Platform)** for smooth opacity transitions, improving animation fluidity and performance.
+
+
