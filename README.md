@@ -1,6 +1,11 @@
+
+# ---> Assignment <---
+
 Live Webpage: https://darshankardil-create.github.io/Car_scroll/
 
-## Improvements from the Original Webpage
+# Improvements from the Original Webpage
+
+
 
 - **Problem:** When zooming out the screen, the car path width increased but the car’s position was not recalculated correctly, preventing it from moving forward unless the page was manually refreshed.  
   **Solution:** Attached a `resize` event listener to the `window` object and dynamically recalculated layout dimensions using `window.innerWidth`, ensuring accurate position updates and uninterrupted car movement without requiring a refresh.
