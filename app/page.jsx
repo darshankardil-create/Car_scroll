@@ -82,6 +82,7 @@ const Car = () => {
       scrollgreayh.current.scrollTop = localposi;
       console.log(localposi);
     }
+    alert("Scroll to movie the car 😊")
   }, []);
 
   return (
