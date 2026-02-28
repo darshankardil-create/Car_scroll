@@ -15,16 +15,15 @@ const Car = () => {
   const car = useRef();
   const wel = useRef([]);
 
-  function opacity(index) {
+  function opacity(p) {
     const range = (innerwidth - 160) / 4;
-    const startAt = range * (index - 1);
+    const startAt = range * (p - 1);
     const currentOpacity = (scroll - startAt) / range;
 
     return Math.max(0, Math.min(currentOpacity, 1));
   }
 
   useEffect(() => {
-
     if (!scrollgreayh.current || !car.current) return;
 
     setinnerwidth(window.innerWidth);
@@ -32,7 +31,6 @@ const Car = () => {
     const Opacityel = wel.current.map((el) => {
       return gsap.quickTo(el, "opacity");
     });
-
 
     const caroverword = () => {
       localStorage.setItem(
@@ -44,7 +42,7 @@ const Car = () => {
       Opacityel.forEach((i, ind) => {
         const el = wel.current[ind];
         if (
-          el.getBoundingClientRect().left > // Cache ||
+          el.getBoundingClientRect().left >
           car.current.getBoundingClientRect().left
         ) {
           i(0); //if car is ahead
@@ -59,8 +57,8 @@ const Car = () => {
 
     const handleWheel = (e) => {
       scrollgreayh.current.scrollTop += e.deltaY; //manual scroll
-      if (Math.min(scroll, innerwidth - 160) === innerwidth - 160) {
-        scrollgreayh.current.scrollTop += e.deltaY - 2;
+      if (Math.min(scroll, innerwidth - 160) === innerwidth) {
+        scrollgreayh.current.scrollTop += e.deltaY;
       }
     };
 

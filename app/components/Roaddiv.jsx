@@ -10,15 +10,16 @@ const Roaddiv = ({ scrollgreayh, innerwidth, car, scroll, wel }) => {
         }
         ref={scrollgreayh}
       >
+        
         <div className="h-[265vh]" />
         {/* 3 times more long viewport for scroll */}
-        <div className="min-w-screen h-50 fixed  bg-[#1E1E1E] top-1/3 ">
+        <div className="min-w-screen h-50 fixed  bg-[#1E1E1E] top-1/3 ">  
           <div
             className={"h-50 bg-[#45db7d] "}
             style={{ width: `${scroll + 70}px` }}
           >
             <div className="font-black text-[128px] fixed pt-3 pl-10 ">
-              {"WELCOME4ITZFIZZ".split("").map((i, ind) => {
+              {"Animation4by4me4".split("").map((i, ind) => {
                 if (i === "4") {
                   return <span className={"p-3"} key={ind}></span>;
                 } else {
@@ -38,7 +39,7 @@ const Roaddiv = ({ scrollgreayh, innerwidth, car, scroll, wel }) => {
             </div>
 
             <div
-              style={{ left: Math.min(scroll, innerwidth - 160) }}
+              style={{ left: Math.min(scroll, innerwidth - 160) }} 
               className="relative "
               ref={car}
             >
